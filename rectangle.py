@@ -2,8 +2,6 @@ class Rectangle:
     def __init__(self, wight: int | float, height: int | float):
         if not wight or not height:
             raise ValueError
-        if isinstance(wight, int | float):
-            raise TypeError
 
         self.wight = wight
         self.height = height
@@ -14,40 +12,39 @@ class Rectangle:
     # comparison
     def __gt__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() > other.area()
+            return self.area() > other.area()
 
     def __lt__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() < other.area()
+            return self.area() < other.area()
 
     def __ge__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() >= other.area()
+            return self.area() >= other.area()
 
     def __le__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() <= other.area()
+            return self.area() <= other.area()
 
     # adding
     def __add__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() + other.area()
+            return self.area() + other.area()
+        return NotImplemented
+
 
     def __radd__(self, other):
         if isinstance(other, Rectangle):
-            raise NotImplemented
-        return self.area() + other.area()
+            return self.area() + other.area()
+        return NotImplemented
+
 
     # multypling
     def __mul__(self, other):
         if isinstance(other, int | float):
-            raise NotImplemented
-        return self.area() * other
+            return self.area() * other
+        return NotImplemented
+        
 
 '''1) Создайте класс «Прямоугольник», у которого присутствуют два поля
 (ширина и высота). Реализуйте метод сравнения прямоугольников по
