@@ -1,7 +1,12 @@
 class Rectangle:
     def __init__(self, wight: int | float, height: int | float):
         if not wight or not height:
-            raise ValueError
+            pass
+            #raise ValueError
+
+        if isinstance(wight, int | float):
+            pass
+            #raise TypeError
 
         self.wight = wight
         self.height = height
@@ -44,7 +49,7 @@ class Rectangle:
         if isinstance(other, int | float):
             return self.area() * other
         return NotImplemented
-        
+
 
 '''1) Создайте класс «Прямоугольник», у которого присутствуют два поля
 (ширина и высота). Реализуйте метод сравнения прямоугольников по
