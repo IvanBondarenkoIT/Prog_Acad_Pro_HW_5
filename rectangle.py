@@ -40,7 +40,7 @@ class Rectangle:
 
     def __radd__(self, other):
         if isinstance(other, Rectangle):
-            return self.area() + other.area()
+            return Rectangle(self.area() + other.area(), 1)
         return NotImplemented
 
 
